@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Frozen 💙</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050816;
+overflow-x:hidden;
+color:white;
+}
+
+/* BACKGROUND */
+
+.bg{
+position:fixed;
+inset:0;
+z-index:-5;
+background:
+radial-gradient(circle at top left,#2563eb55,transparent 40%),
+radial-gradient(circle at bottom right,#60a5fa55,transparent 40%),
+linear-gradient(to bottom,#050816,#0f172a,#1e3a8a);
+}
+
+.glow{
+position:absolute;
+width:400px;
+height:400px;
+background:#60a5fa;
+filter:blur(130px);
+opacity:.2;
+border-radius:50%;
+animation:floatGlow 8s ease-in-out infinite;
+}
+
+.glow:nth-child(1){
+top:-120px;
+left:-120px;
+}
+
+.glow:nth-child(2){
+bottom:-150px;
+right:-100px;
+animation-delay:4s;
+}
+
+@keyframes floatGlow{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(30px);
+}
+}
+
+/* SNOW */
+
+.snow{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-1;
+}
+
+.snow span{
+position:absolute;
+top:-20px;
+color:white;
+animation:fall linear infinite;
+opacity:.8;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh) rotate(0deg);
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+
+/* OPENING */
+
+.opening{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+animation:fadeIn 2s ease;
+}
+
+.opening img{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid rgba(255,255,255,.8);
+box-shadow:0 20px 50px rgba(96,165,250,.4);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+
+.opening h1{
+font-size:65px;
+margin-top:35px;
+font-weight:800;
+line-height:1.1;
+}
+
+.opening h1 span{
+color:#93c5fd;
+text-shadow:0 0 20px #60a5fa;
+}
+
+.opening p{
+margin-top:20px;
+font-size:20px;
+opacity:.9;
+max-width:700px;
+line-height:1.8;
+}
+
+.scroll{
+margin-top:50px;
+font-size:40px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-12px);
+}
+}
+
+/* GALLERY */
+
+.section{
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.title{
+text-align:center;
+font-size:50px;
+margin-bottom:60px;
+font-weight:800;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+padding:15px;
+border-radius:30px;
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+transition:.5s;
+overflow:hidden;
+position:relative;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+.card img{
+width:100%;
+border-radius:22px;
+height:420px;
+object-fit:cover;
+}
+
+.card p{
+margin-top:18px;
+font-size:16px;
+line-height:1.8;
+opacity:.95;
+}
+
+/* LETTER */
+
+.letter{
+margin-top:100px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+padding:50px;
+border-radius:40px;
+line-height:2.2;
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+position:relative;
+}
+
+.letter::before{
+content:'❄️';
+position:absolute;
+top:-28px;
+left:50%;
+transform:translateX(-50%);
+font-size:55px;
+}
+
+.letter h2{
+font-size:40px;
+margin-bottom:30px;
+text-align:center;
+}
+
+.letter p{
+font-size:18px;
+opacity:.95;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+padding:80px 20px 50px;
+opacity:.8;
+font-size:15px;
+}
+
+/* MUSIC */
+
+.music{
+position:fixed;
+right:20px;
+bottom:20px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(20px);
+padding:15px 20px;
+border-radius:22px;
+display:flex;
+align-items:center;
+gap:12px;
+cursor:pointer;
+z-index:999;
+border:1px solid rgba(255,255,255,.1);
+transition:.4s;
+}
+
+.music:hover{
+transform:scale(1.05);
+}
+
+.music #icon{
+font-size:22px;
+}
+
+/* FADE */
+
+.fade{
+animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.opening h1{
+font-size:42px;
+}
+
+.title{
+font-size:35px;
+}
+
+.letter{
+padding:30px;
+}
+
+.letter h2{
+font-size:30px;
+}
+
+.letter p{
+font-size:16px;
+}
+
+.card img{
+height:350px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+<div class="glow"></div>
+<div class="glow"></div>
+</div>
+
+<div class="snow" id="snow"></div>
+
+<!-- OPENING -->
+
+<section class="opening fade">
+
+<img src="WhatsApp Image 2026-05-07 at 18.29.26.jpeg">
+
+<h1>
+Happy Birthday <br>
+<span>Frozen 💙</span>
+</h1>
+
+<p>
+untuk shofi rahmawati,
+cewe paling cantik,
+paling manis,
+dan paling spesial di hidup aku ❄️
+</p>
+
+<div class="scroll">
+❄️
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="section fade">
+
+<h1 class="title">
+Frozen Memories ✨
+</h1>
+
+<div class="gallery">
+
+<div class="card">
+<img src="WhatsApp Image 2026-05-07 at 18.29.26.jpeg">
+<p>
+aku selalu suka cara kamu tersenyum 💙
+</p>
+</div>
+
+<div class="card">
+<img src="WhatsApp Image 2026-05-07 at 18.29.26 (1).jpeg">
+<p>
+frozen paling cantik sedunia 😭❄️
+</p>
+</div>
+
+<div class="card">
+<img src="WhatsApp Image 2026-05-07 at 18.29.29.jpeg">
+<p>
+emang bole se cantik ini dek.
+</p>
+</div>
+
+<div class="card">
+<img src="WhatsApp Image 2026-05-07 at 18.30.20.jpeg">
+<p>
+cantik banget kaya calon masa depanku.
+</p>
+</div>
+
+</div>
+
+<!-- LETTER -->
+
+<div class="letter">
+
+<h2>
+Surat kecil buat Frozen 💌
+</h2>
+
+<p>
+selamat ulang tahun ya sayangg,
+hihi selamat bertambah umur,
+sehat selalu ya,
+semua doa terbaik untukmu,
+semoga jalanmu dimudahkan,
+semoga semua cita citamu tercapai,
+semoga apa yang kamu usahain hari ini bisa terwujud semua kelak di masa depan ya.
+<br><br>
+
+terimakasih sudah mau menemani aku,
+terimakasih sudah mau sama aku.
+aku bahagia banget bisa bertemu kamu.
+<br><br>
+
+sukses terus ya sayang,
+aku selalu mencintaimuu.
+i love youu 💙
+</p>
+
+</div>
+
+</section>
+
+<div class="footer">
+dibuat dengan penuh cinta oleh ultraman kesayanganmu 💙
+</div>
+
+<!-- MUSIC -->
+
+<div class="music" onclick="toggleMusic()">
+
+<div id="icon">
+▶️
+</div>
+
+<div>
+<b>Bergema Sampai Selamanya</b><br>
+<small>Nadin Amizah</small>
+</div>
+
+</div>
+
+<!-- VIDEO MUSIC -->
+
+<video id="music" loop style="display:none">
+<source src="WhatsApp Video 2026-05-07 at 18.29.29.mp4" type="video/mp4">
+</video>
+
+<script>
+
+/* MUSIC */
+
+const music=document.getElementById('music');
+const icon=document.getElementById('icon');
+
+function toggleMusic(){
+
+if(music.paused){
+
+music.play();
+icon.innerHTML='⏸️';
+
+}else{
+
+music.pause();
+icon.innerHTML='▶️';
+
+}
+
+}
+
+/* AUTO PLAY */
+
+window.addEventListener('click',()=>{
+
+music.play();
+
+},{once:true});
+
+/* SNOW */
+
+const snow=document.getElementById('snow');
+
+for(let i=0;i<80;i++){
+
+let s=document.createElement('span');
+
+s.innerHTML='❄';
+
+s.style.left=Math.random()*100+'vw';
+
+s.style.fontSize=Math.random()*20+10+'px';
+
+s.style.animationDuration=Math.random()*5+5+'s';
+
+s.style.animationDelay=Math.random()*5+'s';
+
+snow.appendChild(s);
+
+}
+
+</script>
+
+</body>
+</html>
